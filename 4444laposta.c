@@ -71,7 +71,7 @@ int main(int ac, char **av)
 		if (!strD)
 			return (0);
 		
-			tok = strtok(*buf, " ");
+		tok = strtok(*buf, " ");
 		while (tok)
                 {
 			len = strlen(tok);
@@ -85,7 +85,6 @@ int main(int ac, char **av)
 			
 			printf("el largo de la palabra es: %d\n", len);
 			printf("palabra: %s\n", tok);
-
 			for (i = 0; i < len; i++)
 			{
 				printf("StrMal[%d] es %c\n", i, strMal[i]);
@@ -98,7 +97,8 @@ int main(int ac, char **av)
 
 			tok = strtok(NULL, " ");
                 }	
-		
+	
+		j = 0;
 		printf("El puntero doble tiene: ");
 		for(int k = 0; k < q; k++)
 			printf("%s, ", strD[k]);

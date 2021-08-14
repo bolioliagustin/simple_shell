@@ -7,7 +7,7 @@ int main(int ac, char **av)
 	char *buf[4096];
 	size_t bufsize, chara;
 	char *tok;
-
+	
 	while (buf)
 	{	
 		printf("$ ");

@@ -5,3 +5,4 @@
 #include <sys/wait.h>
 
 int qStrtok(char *c);
+char **strDouble(char *c);

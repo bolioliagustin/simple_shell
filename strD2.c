@@ -47,6 +47,7 @@ char **strD2(char *c)
         return (strD);
 }
 
+/*
 int main (void)
 {
 	char **d;
@@ -63,3 +64,4 @@ int main (void)
 	}
 	return (0);
 }
+*/

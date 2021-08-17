@@ -20,6 +20,8 @@ char **strD2(char *c)
 		if(!strD)
 			return (NULL);
 
+		//strD[q] = NULL;
+
                  tok = strtok(copy, " ");
                  if (tok)
                  {
@@ -35,10 +37,12 @@ char **strD2(char *c)
 
                                  tok = strtok(NULL, " ");
 				 k++;
+				 //free(strD[k]);
                          }
+			 //free(strD);
                  }
         }
-
+	
         free(copy);
         return (strD);
 }

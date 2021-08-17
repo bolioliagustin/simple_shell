@@ -1,23 +1,5 @@
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/wait.h>
-
 #include "lib.h"
-/*char *_strcpy(char *dest, char *src)
-{
-	int i;
 
-	for (i = 0 ; *(src + i) != '\0' ; i++)
-	{
-		*(dest + i) = *(src + i);
-	}
-	*(dest + i) = '\0';
-	return (dest);
-}*/
-
-#include "lib.h"
 int qStrtok(char *c)
 {
  	char *copy;
@@ -42,15 +24,15 @@ int qStrtok(char *c)
                 	}
        		}
        }
-
-/* liberar memoria de copy */
+	free(tok);
+       free (copy);
         return (i);
 }
 
-#include "lib.h"
+
 int main(int ac, char **av)
 {
-	char *buf[4096];
+	char *buf;
 	size_t bufsize, chara;
 	int q;
 	char *tok;
@@ -58,19 +40,29 @@ int main(int ac, char **av)
 	char *strMal, *bufCpy;
 	int i = 0, j = 0;
 	char **strD;
-	while (buf)
+
+	int p = 1;
+
+	while (p == 1)
 	{
+		buf = malloc(sizeof(char) * bufsize);
+		if(!buf)
+			return (-1);
+
 		printf("$ ");
-		chara = getline(buf, &bufsize, stdin);
+		chara = getline(&buf, &bufsize, stdin);
 		
-		q = qStrtok(*buf);
+		if(buf[chara - 1] == '\n')
+			buf[chara - 1] = 0;
+
+		q = qStrtok(buf);
 		printf("qStrtok: %d\n", q);
 		
 		strD = malloc(sizeof(char *) * q);
 		if (!strD)
 			return (0);
 		
-		tok = strtok(*buf, " ");
+		tok = strtok(buf, " ");
 
 		while (tok)
                 {
@@ -79,8 +71,10 @@ int main(int ac, char **av)
 			if (!strMal)
 				return (0);
 			
-			strMal = tok;
+			//strMal = tok;
 
+			strcpy(strMal, tok);
+			
 			int comp = strcmp(strMal, "exit");
 			printf("strcmp dio: %d\n", comp);
 			
@@ -102,9 +96,10 @@ int main(int ac, char **av)
 			j++;
 			i = 0;
 
-/*		liberar memoria de strMal	*/
+//		liberar memoria de strMal	
 
 			tok = strtok(NULL, " ");
+			free(strMal);
                 }	
 	
 		j = 0;
@@ -115,6 +110,17 @@ int main(int ac, char **av)
 		printf("\n");
 		printf("cantidad caracteres: %zu\n", chara);
 	}
+	for (int g = 0 ; g < q ; g++)
+	{
+		free(strD[g]);
+	}
+	free(strD);
+
+	free(tok);
+	free(buf);
+	//free(strMal);
+	//free(strD);
+	
 	return (0);
 }
 

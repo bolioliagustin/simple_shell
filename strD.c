@@ -55,10 +55,10 @@ char **strDouble(char *c)
 
 int main(void)
 {
+	char **d;
 	char *c = "Perrito      malvado    %";
 	int q = qStrtok(c);
 	printf("En el main q da: %d\n", q);
-	char **d;
 
 	d = strDouble(c);
 

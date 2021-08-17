@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +17,7 @@
 	return (dest);
 }*/
 
-#include "lib.h"
+
 int qStrtok(char *c)
 {
  	char *copy;

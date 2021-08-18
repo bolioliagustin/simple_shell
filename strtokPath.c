@@ -1,10 +1,10 @@
 #include "lib.h"
 int qStrtokPath(char *c)
 {
- 	char *copy;
+	char *copy;
 
 	char *tok;
-       int i = 0, j = 0, k = 0;
+	int i = 0, j = 0, k = 0;
 
 	for (; c[j]; j++)
 		;
@@ -12,8 +12,8 @@ int qStrtokPath(char *c)
 	copy = malloc(sizeof(char) * j);
 	
 	strcpy(copy, c);
-       if (c)
-       {
+	if (c)
+	{
        		tok = strtok(copy, ":");
        		if (tok)
        		{
@@ -23,7 +23,7 @@ int qStrtokPath(char *c)
 				tok = strtok(NULL, ":");
                 	}
        		}
-       }
+	}
 
 	free(copy);
         return (i);

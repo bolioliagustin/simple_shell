@@ -14,7 +14,7 @@ char **strD2Path(char *c)
         strcpy(copy, c);
         if (c)
         {
-		int q = qStrtok(c);
+		int q = qStrtokPath(c);
 
 		strD = malloc(sizeof(char *) * q);
 		if(!strD)

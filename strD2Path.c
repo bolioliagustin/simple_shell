@@ -1,6 +1,6 @@
 #include "lib.h"
 
-char **strD2(char *c)
+char **strD2Path(char *c)
 {
         char **strD;
 	char *copy;
@@ -22,7 +22,7 @@ char **strD2(char *c)
 
 		//strD[q] = NULL;
 
-                 tok = strtok(copy, " ");
+                 tok = strtok(copy, ":");
                  if (tok)
                  {
                          while (tok)
@@ -35,7 +35,7 @@ char **strD2(char *c)
 
 				 strcpy(strD[k], tok);
 
-                                 tok = strtok(NULL, " ");
+                                 tok = strtok(NULL, ":");
 				 k++;
 				 //free(strD[k]);
                          }

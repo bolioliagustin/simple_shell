@@ -4,7 +4,7 @@ int main(void)
 {
 	char *buf;
 	size_t bufsize, chara;
-	int q = 0;
+	int q = 0, qP = 0;
 	char **doub;
 
 	while (buf)
@@ -30,14 +30,14 @@ int main(void)
 		q = qStrtok(buf);
 
 		doub = strD2(buf);
-		
 		printf("compare: %d\n", t);
 		printf("cantidad de tokens: %d\n", q);
 
 		for (int h = 0; h < q; h++)
 			printf("doub[%d]: %s\n", h, doub[h]);
 
-		printf("environ: %s\n", environ[12] + 5);
+		printf("%s\n", getPath());
+		
 	}
 	return (0);
 }

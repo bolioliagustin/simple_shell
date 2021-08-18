@@ -1,5 +1,5 @@
 #include "lib.h"
-int qStrtok(char *c)
+int qStrtokPath(char *c)
 {
  	char *copy;
 
@@ -14,13 +14,13 @@ int qStrtok(char *c)
 	strcpy(copy, c);
        if (c)
        {
-       		tok = strtok(copy, " ");
+       		tok = strtok(copy, ":");
        		if (tok)
        		{
                 	while (tok)
                 	{
                         	i++; 
-				tok = strtok(NULL, " ");
+				tok = strtok(NULL, ":");
                 	}
        		}
        }

@@ -2,13 +2,16 @@
 
 int main(void)
 {
+	
 	char *buf;
 	size_t bufsize, chara;
-	int q = 0, qP = 0;
+	int q = 0;
 	char **doub;
-
-	while (buf)
+	int qq = 0;
+	char *path;
+	while (1)
 	{
+	
 		printf("$ ");
 		//chara = getline(&buf, &bufsize, stdin);
 
@@ -20,7 +23,7 @@ int main(void)
 		
 		if((buf[chara - 1]) == '\n')
 			buf[chara - 1] = 0;
-		
+			
 		//AGREGAR FUNCION STRCMP
 		int t = strcmp(buf, "EOF");
 		
@@ -28,7 +31,7 @@ int main(void)
 			return (-1);
 
 		q = qStrtok(buf);
-
+		
 		doub = strD2(buf);
 		printf("compare: %d\n", t);
 		printf("cantidad de tokens: %d\n", q);
@@ -38,6 +41,14 @@ int main(void)
 
 		printf("%s\n", getPath());
 		
+		//-----------		
+		qq = qStrtokPath(getPath());
+
+		printf("EL PATH TIENE %d TOKENS\n", qq);
+
+		for (int gg = 0; strD2Path(getPath())[gg]; gg++)
+			printf("DP [%d]: %s\n", gg, strD2Path(getPath())[gg]);
+		//----
 	}
 	return (0);
 }

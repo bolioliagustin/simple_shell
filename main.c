@@ -49,6 +49,9 @@ int main(void)
 		for (int gg = 0; strD2Path(getPath())[gg]; gg++)
 			printf("DP [%d]: %s\n", gg, strD2Path(getPath())[gg]);
 		//----
+		
+		printf("Array: %s\n", str_concat(doub[0], strD2Path(getPath())[2]));
+
 	}
 	return (0);
 }

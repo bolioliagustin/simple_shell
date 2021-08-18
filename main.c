@@ -37,6 +37,7 @@ int main(void)
 		for (int h = 0; h < q; h++)
 			printf("doub[%d]: %s\n", h, doub[h]);
 
+		printf("environ: %s\n", environ[12] + 5);
 	}
 	return (0);
 }

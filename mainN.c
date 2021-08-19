@@ -8,15 +8,19 @@ int main(void)
 	int q = 0;
 	char **doub;
 	int qq = 0;
-	//---
-	//char *path = getPath();
-	//---
-	//char *path;
+	char *pat;
+	int lenpat;
+	char **patt;
+
+	lenpat = strlen(environ[12] + 5);
+	printf("environ tiene %d chars\n", lenpat);
+	qq = qStrtokPath(environ[12] + 5);
+	printf("EL PATH TIENE %d TOKENS\n", qq);
+	
 	while (1)
 	{
 	
 		printf("$ ");
-		//chara = getline(&buf, &bufsize, stdin);
 
 		buf = malloc(sizeof(char) * bufsize);
 		if (!buf)
@@ -42,18 +46,26 @@ int main(void)
 		for (int h = 0; h < q; h++)
 			printf("doub[%d]: %s\n", h, doub[h]);
 
-		printf("%s\n", getPath());
+		//printf("%s\n", path);
 		
 		//-----------		
-		qq = qStrtokPath(getPath());
-
-		printf("EL PATH TIENE %d TOKENS\n", qq);
-
-		for (int gg = 0; strD2Path(getPath())[gg]; gg++)
-			printf("DP [%d]: %s\n", gg, strD2Path(getPath())[gg]);
+		
+		//patt = strD2Path(environ[12] + 5);
+		//for (int gg = 0; strD2Path((environ[12] + 5))[gg]; gg++)
+		//	printf("DP [%d]: %s\n", gg, strD2Path((environ[12] + 5))[gg]);
 		//----
 		
+		//for (int gg = 0; patt[gg]; gg++)
+		//	printf("DP [%d]: %s\n", gg, patt[gg]);
 		//printf("%s\n", strD2Path(getPath())[2]);
+		//lenpat = strlen(environ[12] + 5);
+		//pat = malloc(sizeof(char) * lenpat);
+
+		//pat = environ[12] + 5;
+
+		//printf("pat: %s\n", pat);
+		printf("%d\n", lenpat);
+		printf("%s\n", environ[12] + 5);
 		printf("%s\n", doub[0]);
 		//printf("Array: %s\n", str_concat((strD2Path(getPath()))[2], doub[0]));
 		//printf("%s\n", str_concat(strD2Path(getPath())[2], doub[0]));

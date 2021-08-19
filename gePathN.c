@@ -7,7 +7,7 @@ char *getPath()
 
 	char *env = malloc(sizeof(char) * len);
 
-	env = environ[12] + 5;
+	strcpy(env, (environ[12] + 5));
 
 	return(env);
 	//------------

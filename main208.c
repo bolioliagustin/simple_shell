@@ -11,7 +11,7 @@ int main(void)
 	char *simp;
 	char **simpD;
 
-	char *
+	char *slash;
 	//---
 	//char *path = getPath();
 	//---
@@ -68,10 +68,19 @@ int main(void)
 			printf("DP [%d]: %s\n", gg, simpD[gg]);
 		//----
 		
+		slash = str_concat("/", doub[0]);
+
+		printf("SLASH: %s\n", slash);
+
+		for (int kk = 0; simpD[kk]; kk++)
+		{
+			str_concat(simpD[kk], slash);
+			printf("simpD[%d]: %s\n", kk, simpD[kk]);
+		}
 		//printf("%s\n", strD2Path(getPath())[2]);
 		printf("%s\n", doub[0]);
-		printf("Array: %s\n", str_concat(simpD[2], doub[0]));
-
+		printf("Array: %s\n", str_concat(simpD[2], slash));
+		
 		
 		//printf("%s\n", str_concat(strD2Path(getPath())[2], doub[0]));
 	}

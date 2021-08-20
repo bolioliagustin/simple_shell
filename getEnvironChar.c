@@ -1,4 +1,4 @@
-include "lib.h"
+#include "lib.h"
 char **getEnviron()
 {
 	int i = 0, j = 0, len;
@@ -19,13 +19,36 @@ char **getEnviron()
 	return(envT);
 }
 
+char *compEnv(char *c)
+{
+	int i = 0, flag = 0;
+
+	char **p = getEnviron();
+
+	char *pa = p[12];
+
+	for (; c[i]; i++)
+	{
+		if (c[i] != pa[i])
+		{
+			flag++;
+		}
+	}
+
+	if (flag == 0)
+		return (pa);
+
+}
+
 int main(void)
 {
 	int i = 0;
 
 	char **p = getEnviron();
-	
+	char *pa = compEnv("PATH");
 	printf("%s\n", p[12] + 5);
-
+	printf("%s\n", pa);
+	
+	
 	return(0);
 }

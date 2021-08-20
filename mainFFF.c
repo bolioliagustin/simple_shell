@@ -3,7 +3,7 @@
 int main(void)
 {
 	
-	char *buf;
+	char buf[1024];
 	size_t bufsize, chara;
 	int q = 0;
 	char **doub;
@@ -12,26 +12,26 @@ int main(void)
 	int lenpat;
 	char **patt;
 
-	/*pat = compEnv("PATH");
+	pat = compEnv("PATH");
 	lenpat = strlen(pat);
 	printf("environ tiene %d chars\n", lenpat);
 	qq = qStrtokPath(pat);
-	printf("EL PATH TIENE %d TOKENS\n", qq);*/
+	printf("EL PATH TIENE %d TOKENS\n", qq);
 	
 	while (1)
 	{
 	
 		printf("$ ");
 
-		buf = malloc(sizeof(char) * bufsize);
+	/*	buf = malloc(sizeof(char) * bufsize);
 		if (!buf)
 			return (0);
-		
-		chara = getline(&buf, &bufsize, stdin);
-		
+	*/	
+		chara = getline(buf, &bufsize, stdin);
+	/*	
 		if((buf[chara - 1]) == '\n')
 			buf[chara - 1] = 0;
-			
+	*/		
 		//AGREGAR FUNCION STRCMP
 		int t = strcmp(buf, "EOF");
 		
@@ -51,7 +51,7 @@ int main(void)
 		
 		//-----------		
 			
-		//pat = compEnv("PATH");
+		pat = compEnv("PATH");
 		//patt = strD2Path(environ[12] + 5);
 		//for (int gg = 0; strD2Path((environ[12] + 5))[gg]; gg++)
 		//	printf("DP [%d]: %s\n", gg, strD2Path((environ[12] + 5))[gg]);

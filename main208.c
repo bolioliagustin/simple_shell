@@ -69,17 +69,19 @@ int main(void)
 		//----
 		
 		slash = str_concat("/", doub[0]);
+		
+		concPath(simpD, slash);
 
-		printf("SLASH: %s\n", slash);
+		//printf("SLASH: %s\n", slash);
 
 		for (int kk = 0; simpD[kk]; kk++)
 		{
-			str_concat(simpD[kk], slash);
+		//	str_concat(simpD[kk], slash);
 			printf("simpD[%d]: %s\n", kk, simpD[kk]);
 		}
 		//printf("%s\n", strD2Path(getPath())[2]);
 		printf("%s\n", doub[0]);
-		printf("Array: %s\n", str_concat(simpD[2], slash));
+		//printf("Array: %s\n", str_concat(simpD[2], slash));
 		
 		
 		//printf("%s\n", str_concat(strD2Path(getPath())[2], doub[0]));

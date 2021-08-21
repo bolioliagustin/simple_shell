@@ -15,3 +15,5 @@ char *getPath();
 char *str_concat(char *s1, char *s2);
 char **getEnviron();
 char *compEnv(char * c);
+char **concPath(char **p, char *s);
+char *string_nconcat(char *s1, char *s2);

@@ -25,7 +25,7 @@ char **concPath(char **p, char *s)
 		tmp = string_nconcat(p[i], s);
 		//free(p[i]);
 		p[i] = tmp;
-		p[len] = '\0';
+		p[lenp] = '\0';
 		printf("p[%d]: %s\n", i, p[i]);
 		lenp = 0;
 		free(tmp);

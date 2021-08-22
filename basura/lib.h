@@ -17,4 +17,3 @@ char **getEnviron();
 char *compEnv(char * c);
 char **concPath(char **p, char *s);
 char *string_nconcat(char *s1, char *s2);
-int executen(char **d, char **a);

@@ -2,7 +2,6 @@
 int qStrtokPath(char *c)
 {
 	char *copy;
-
 	char *tok;
 	int i = 0, j = 0, k = 0;
 
@@ -10,22 +9,21 @@ int qStrtokPath(char *c)
 		;
 
 	copy = malloc(sizeof(char) * j);
-	
+
 	_strcpy(copy, c);
 	if (c)
 	{
-       		tok = strtok(copy, ":");
-       		if (tok)
-       		{
-                	while (tok)
-                	{
-                        	i++; 
+		tok = strtok(copy, ":");
+		if (tok)
+		{
+			while (tok)
+			{
+				i++;
 				tok = strtok(NULL, ":");
-                	}
-       		}
+			}
+		}
 	}
-
 	free(copy);
-        return (i);
+	return (i);
 }
 

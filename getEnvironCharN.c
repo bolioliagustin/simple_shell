@@ -26,24 +26,10 @@ char *compEnv(char *c)
 	char **p = getEnviron();
 
 	len = _strlen(p[12] + 5);
-	
+
 	pa = malloc(sizeof(char) * len);
-		
+
 	_strcpy(pa, p[12] + 5);
 
 	return (pa);
 }
-
-/*
-int main(void)
-{
-	int i = 0;
-
-	char **p = getEnviron();
-	char *pa = compEnv("PATH");
-	printf("%s\n", p[12] + 5);
-	printf("%s\n", pa);
-	
-	
-	return(0);
-}*/

@@ -9,18 +9,20 @@ char **strD2Path(char *c)
 
         for (; c[j]; j++)
                 ;
-        copy = malloc(sizeof(char) * j);
+        copy = malloc(sizeof(char) * (j + 1));
 
         strcpy(copy, c);
+
+	copy[j] = '\0';
         if (c)
         {
 		int q = qStrtokPath(c);
 
-		strD = malloc(sizeof(char *) * q);
+		strD = malloc(sizeof(char *) * (q + 1));
 		if(!strD)
 			return (NULL);
 
-		//strD[q] = NULL;
+		strD[q] = NULL;
 
                  tok = strtok(copy, ":");
                  if (tok)
@@ -29,7 +31,7 @@ char **strD2Path(char *c)
                          {
                                  int len = strlen(tok);
 
-				 strD[k] = malloc(sizeof(char) * len);
+				 strD[k] = malloc(sizeof(char) * (len + 1));
 				 if (!strD)
 					 return (NULL);
 
@@ -39,6 +41,7 @@ char **strD2Path(char *c)
 				 k++;
 				 //free(strD[k]);
                          }
+			 strD[k] = '\0';
 			 //free(strD);
                  }
         }

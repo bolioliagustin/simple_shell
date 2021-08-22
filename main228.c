@@ -35,6 +35,7 @@ int main(void)
 	*/	
 		chara = getline(&buf, &bufsize, stdin);
 		
+		
 		if((buf[chara - 1]) == '\n')
 			buf[chara - 1] = 0;
 			

@@ -11,7 +11,7 @@ char **strD2Path(char *c)
                 ;
         copy = malloc(sizeof(char) * (j + 1));
 
-        strcpy(copy, c);
+        _strcpy(copy, c);
 
 	copy[j] = '\0';
         if (c)
@@ -29,13 +29,13 @@ char **strD2Path(char *c)
                  {
                          while (tok)
                          {
-                                 int len = strlen(tok);
+                                 int len = _strlen(tok);
 
 				 strD[k] = malloc(sizeof(char) * (len + 1));
 				 if (!strD)
 					 return (NULL);
 
-				 strcpy(strD[k], tok);
+				 _strcpy(strD[k], tok);
 
                                  tok = strtok(NULL, ":");
 				 k++;
@@ -50,21 +50,3 @@ char **strD2Path(char *c)
         return (strD);
 }
 
-/*
-int main (void)
-{
-	char **d;
-	char *c = "perro    malo    %";
-	int q = qStrtok(c);
-	printf("en el main q da: %d\n", q);
-
-	d = strD2(c);
-
-	for (int i = 0; i < q ; i++)
-	{
-		printf("strD[%d]: %s\n", i, d[i]);
-		printf("el lardo de la palabra es: %ld\n", strlen(d[i]));
-	}
-	return (0);
-}
-*/

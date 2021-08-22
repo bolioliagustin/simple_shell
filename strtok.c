@@ -11,7 +11,7 @@ int qStrtok(char *c)
 
 	copy = malloc(sizeof(char) * j);
 	
-	strcpy(copy, c);
+	_strcpy(copy, c);
        if (c)
        {
        		tok = strtok(copy, " ");

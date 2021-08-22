@@ -5,12 +5,12 @@ char **concPath(char **p, char *s)
 	int i = 0, lenp = 0, lens = 0;
 	char *tmp;
 
-	lens = strlen(s);
+	lens = _strlen(s);
 
 	
 	for (; p[i]; i++)
 	{
-		lenp = strlen(p[i]);
+		lenp = _strlen(p[i]);
 		printf("lenP: %d\n", lenp);
 		lenp = lenp + lens;
 		printf("lenP + lenS: %d\n", lenp);
@@ -21,7 +21,7 @@ char **concPath(char **p, char *s)
 			return (NULL);
 		
 		//p[lenp] = '\0';
-		strcpy(p[i], tmp);
+		_strcpy(p[i], tmp);
 		//p[lenp] = '\0';
 		str_concat(p[i], s);
 		//p[lenp] = '\0';

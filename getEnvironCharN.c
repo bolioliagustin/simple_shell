@@ -11,9 +11,9 @@ char **getEnviron()
 
 	for(; j < i; j++)
 	{	
-		len = strlen(environ[j]);
+		len = _strlen(environ[j]);
 		envT[j] = malloc(sizeof(char) * len);
-		strcpy(envT[j], environ[j]);
+		_strcpy(envT[j], environ[j]);
 		len = 0;
 	}
 	return(envT);
@@ -25,11 +25,11 @@ char *compEnv(char *c)
 	char *pa;
 	char **p = getEnviron();
 
-	len = strlen(p[12] + 5);
+	len = _strlen(p[12] + 5);
 	
 	pa = malloc(sizeof(char) * len);
 		
-	strcpy(pa, p[12] + 5);
+	_strcpy(pa, p[12] + 5);
 
 	return (pa);
 }

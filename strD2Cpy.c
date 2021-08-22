@@ -13,7 +13,7 @@ char **strD2(char *c)
 
 
 
-        strcpy(copy, c);
+        _strcpy(copy, c);
 
 	copy[j] = '\0';
 
@@ -34,13 +34,13 @@ char **strD2(char *c)
                  {
                          while (tok)
                          {
-                                 int len = strlen(tok);
+                                 int len = _strlen(tok);
 
 				 strD[k] = malloc(sizeof(char) * (len + 1));
 				 if (!strD)
 					 return (NULL);
 
-				 strcpy(strD[k], tok);
+				 _strcpy(strD[k], tok);
 
                                  tok = strtok(NULL, " ");
 				 k++;

@@ -19,7 +19,8 @@ char **concPath(char **p, char *s)
 		p[i] = malloc(sizeof(char) * (lenp + 1));
 		if(!p[i])
 			return (NULL);
-
+		
+		//p[lenp] = '\0';
 		strcpy(p[i], tmp);
 		//p[lenp] = '\0';
 		str_concat(p[i], s);
@@ -31,6 +32,7 @@ char **concPath(char **p, char *s)
 	return(p);
 }
 
+/*
 int main(void)
 {
 		
@@ -62,3 +64,4 @@ int main(void)
 
 		return (0);
 }
+*/

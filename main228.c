@@ -40,7 +40,7 @@ int main(void)
 			buf[chara - 1] = 0;
 			
 		//AGREGAR FUNCION STRCMP
-		int t = strcmp(buf, "EOF");
+		int t = _strcmp(buf, "EOF");
 		
 		if (t == 0)
 			return (-1);

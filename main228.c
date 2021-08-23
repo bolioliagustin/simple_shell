@@ -4,7 +4,7 @@ int main(void)
 {
 	
 	char *buf;
-	size_t bufsize, chara;
+	size_t bufsize = 1024, chara;
 	int q = 0;
 	char **doub;
 	int qq = 0;
@@ -21,7 +21,7 @@ int main(void)
 	if (!buf)
 		return (0);
 */
-	buf = (char *)malloc(bufsize * sizeof(char));
+	//buf = (char *)malloc(bufsize * sizeof(char));
 
 	while (1)
 	{
@@ -29,39 +29,43 @@ int main(void)
 		write(1,"$ ",2);
 		//chara = getline(&buf, &bufsize, stdin);
 
-	/*	buf = malloc(sizeof(char *) * bufsize);
+		buf = malloc(sizeof(char *) * bufsize);
 		if (!buf)
 			return (0);
-	*/	
+		
 		chara = getline(&buf, &bufsize, stdin);
 		
+		if (chara == -1)
+			return (-1);
 		
 		if((buf[chara - 1]) == '\n')
 			buf[chara - 1] = 0;
-			
-		//AGREGAR FUNCION STRCMP
-		int t = _strcmp(buf, "EOF");
+		//printf("input geted: %s\n", buf);	
+	//AGREGAR FUNCION STRCMP
+	/*	int t = _strcmp(buf, "EOF");
 		
 		if (t == 0)
 			return (-1);
+	*/
 
 		q = qStrtok(buf);
 		
+		//doub = strD2(buf);
+		//printf("compare: %d\n", t);
+		//printf("cantidad de tokens: %d\n", q);
 		doub = strD2(buf);
-		printf("compare: %d\n", t);
-		printf("cantidad de tokens: %d\n", q);
-
+		
 		for (int h = 0; h < q; h++)
 			printf("doub[%d]: %s\n", h, doub[h]);
 
-		printf("%s\n", getPath());
+		//printf("%s\n", getPath());
 		
 		//-----------		
 		simp = compEnv("PATH");
 
 		qq = qStrtokPath(simp);
 
-		printf("EL PATH TIENE %d TOKENS\n", qq);
+		//printf("EL PATH TIENE %d TOKENS\n", qq);
 
 		simpD = strD2Path(simp);
 
@@ -69,6 +73,7 @@ int main(void)
 			printf("DP [%d]: %s\n", gg, simpD[gg]);
 		//----
 		
+
 		slash = str_concat("/", doub[0]);
 		
 		concPath(simpD, slash);
@@ -81,9 +86,11 @@ int main(void)
 			printf("simpD[%d]: %s\n", kk, simpD[kk]);
 		}
 		//printf("%s\n", strD2Path(getPath())[2]);
-		printf("%s\n", doub[0]);
+		//printf("%s\n", doub[0]);
+		
 
 		executen(simpD, doub);
+
 		//printf("Array: %s\n", str_concat(simpD[2], slash));
 		
 		

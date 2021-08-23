@@ -25,8 +25,8 @@ int main(void)
 
 	while (1)
 	{
-	
-		write(1,"$ ",2);
+		if (isatty(0))
+			write(1,"$ ",2);
 		//chara = getline(&buf, &bufsize, stdin);
 
 		buf = malloc(sizeof(char *) * bufsize);

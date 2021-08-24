@@ -4,11 +4,13 @@ char **concPath(char **p, char *s)
 {
 	int i = 0, lenp = 0, lens = 0;
 	char *tmp;
+	
 
 	lens = _strlen(s);
 
 	for (; p[i]; i++)
 	{
+
 		lenp = _strlen(p[i]);
 		//printf("lenP: %d\n", lenp);
 		lenp = lenp + lens;
@@ -26,6 +28,7 @@ char **concPath(char **p, char *s)
 		lenp = 0;
 		free(tmp);
 	}
+	
 	return(p);
 }
 

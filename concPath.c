@@ -12,11 +12,8 @@ char **concPath(char **p, char *s)
 	{
 
 		lenp = _strlen(p[i]);
-		//printf("lenP: %d\n", lenp);
 		lenp = lenp + lens;
-		//printf("lenP + lenS: %d\n", lenp);
 		tmp = str_concat(p[i], s);
-		//printf("tmp: %s\n", tmp);
 
 		p[i] = malloc(sizeof(char) * (lenp + 1));
 		if(!p[i])
@@ -24,7 +21,6 @@ char **concPath(char **p, char *s)
 		
 		_strcpy(p[i], tmp);
 		str_concat(p[i], s);
-		//printf("p[%d]: %s\n", i, p[i]);
 		lenp = 0;
 		free(tmp);
 	}

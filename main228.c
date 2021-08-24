@@ -77,7 +77,22 @@ int main(void)
 		slash = str_concat("/", doub[0]);
 		
 		concPath(simpD, slash);
+		
+		/* ACÁ EN REALIDAD NO HAY QUE IGUALARLO, SINO QUE HAY QUE CREAR UNA COPIA DE DOUB[0] EN SIMPD[qq], PARA ESO HAY QUE SABER EL TAMAÑO
+		   DE DOUB[0] Y HACERLE MALLOC A SIMPD[QQ] CON ESE TAMÑO Y HACERLE UNA COPIA DE DOUB[0]
+		
+		int len0 = _strlen(doub[0]);
 
+		simpD[qq] = malloc(sizeof(char) * (len0 + 1));
+		if (!simpD[qq])
+			return (-1);
+
+		_strcpy(simpD[qq], doub[0]);
+
+		simpD[qq][len0] = '\0';*/
+		
+		simpD[qq] = doub[0];
+		
 		//printf("SLASH: %s\n", slash);
 
 		for (int kk = 0; simpD[kk]; kk++)

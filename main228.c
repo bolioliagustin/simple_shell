@@ -2,17 +2,11 @@
 
 int main(void)
 {
-	
-	char *buf;
+	char *buf, *simp, *slash;
 	size_t bufsize = 1024;
 	int chara;
-	char **doub;
+	char **doub, **simpD;
 	int qq = 0;
-	char *simp;
-	char **simpD;
-
-	char *slash;
-	
 
 	while (1)
 	{
@@ -22,19 +16,20 @@ int main(void)
 		buf = malloc(sizeof(char *) * bufsize);
 		if (!buf)
 			return (0);
-		
+
 		chara = getline(&buf, &bufsize, stdin);
-		
+
 		if (chara == -1)
 			return (-1);
 		
 		if((buf[chara - 1]) == '\n')
 			buf[chara - 1] = 0;
+		
 		doub = strD2(buf);
+		
 		simp = compEnv("PATH");
 
 		qq = qStrtokPath(simp);
-
 
 		simpD = strD2Path(simp);
 

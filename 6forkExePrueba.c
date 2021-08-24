@@ -7,7 +7,7 @@
   */
 int executen(char **d, char **a)
 {
-	int i = 0, success = 0;
+	int i = 0, axs = 0;
 	pid_t pid = 0;
 	int status;
 
@@ -17,11 +17,14 @@ int executen(char **d, char **a)
 	{
 		for (i = 0; d[i]; i++)
 		{
-			success = execve(d[i], a, NULL);
+			axs = access(d[i], X_OK);
+			if (axs == 0)
+			{
+				execve(d[i], a, NULL);
+				break;
+			}
 		}
-
-		if (success == -1)
-			exit(98);
+		exit(98);
 	}
 		wait(&status);
 

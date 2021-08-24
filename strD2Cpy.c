@@ -3,8 +3,7 @@
 char **strD2(char *c)
 {
 	char **strD;
-	char *copy;
-	char *tok;
+	char *copy, *tok;
 	int j = 0, k = 0, q = 0, len = 0;
 
 	for (; c[j]; j++)
@@ -13,7 +12,6 @@ char **strD2(char *c)
 	copy = malloc(sizeof(char) * (j + 1));
 
 	_strcpy(copy, c);
-
 	copy[j] = '\0';
 
 	if (c)
@@ -21,7 +19,7 @@ char **strD2(char *c)
 		q = qStrtok(c);
 
 		strD = malloc(sizeof(char *) * (q + 1));
-		if(!strD)
+		if (!strD)
 			return (NULL);
 
 		strD[q] = NULL;

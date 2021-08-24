@@ -27,7 +27,7 @@ int main(void)
 		
 		doub = strD2(buf);
 		
-		simp = compEnv("PATH");
+		simp = compEnv();
 
 		qq = qStrtokPath(simp);
 

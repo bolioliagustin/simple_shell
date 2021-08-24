@@ -4,7 +4,8 @@ int main(void)
 {
 	
 	char *buf;
-	size_t bufsize = 1024, chara;
+	size_t bufsize = 1024;
+	int chara;
 	int q = 0;
 	char **doub;
 	int qq = 0;

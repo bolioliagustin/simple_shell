@@ -17,11 +17,18 @@ int executen(char **d, char **a)
 	{
 		for (i = 0; d[i]; i++)
 		{
-			success = execve(d[i], a, NULL);
+			if (access(d[i], X_OK) == 0)
+			{
+				success = execve(d[i], a, NULL);
+				
+				if (success == -1)
+					exit(98);
+			}
+
 		}
 
-		if (success == -1)
-			exit(98);
+	/*	if (success == -1)
+			exit(98);*/
 	}
 		wait(&status);
 

@@ -1,5 +1,9 @@
 #include "lib.h"
-
+/**
+  * strD2 - Create an array of strings, each string is a token of the input
+  * @c: A string of the input
+  * Return: An array of strings of the input
+  */
 char **strD2(char *c)
 {
 	char **strD;
@@ -8,7 +12,6 @@ char **strD2(char *c)
 
 	for (; c[j]; j++)
 		;
-
 	copy = malloc(sizeof(char) * (j + 1));
 
 	_strcpy(copy, c);
@@ -23,24 +26,20 @@ char **strD2(char *c)
 			return (NULL);
 
 		strD[q] = NULL;
-
 		tok = strtok(copy, " ");
 		if (tok)
 		{
 			while (tok)
 			{
 				len = _strlen(tok);
-
 				strD[k] = malloc(sizeof(char) * (len + 1));
 				if (!strD)
 					return (NULL);
 
 				_strcpy(strD[k], tok);
-
 				tok = strtok(NULL, " ");
 				k++;
 			}
-
 			strD[k] = '\0';
 		}
 	}

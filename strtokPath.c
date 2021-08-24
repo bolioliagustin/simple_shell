@@ -1,4 +1,9 @@
 #include "lib.h"
+/**
+  * qStrtokPath - Returns the number of PATH tokens separated by :
+  * @c: A string of the PATH
+  * Return: The number of PATH tokens separated by :
+  */
 int qStrtokPath(char *c)
 {
 	char *copy;

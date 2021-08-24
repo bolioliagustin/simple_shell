@@ -1,4 +1,9 @@
 #include "lib.h"
+/**
+  * qStrtok - Returns the number of input tokens separated by " "
+  * @c: A string of the input
+  * Return: The number of input tokens separated by " "
+  */
 int qStrtok(char *c)
 {
 	char *copy;
@@ -19,7 +24,7 @@ int qStrtok(char *c)
 		{
 			while (tok)
 			{
-				i++; 
+				i++;
 				tok = strtok(NULL, " ");
 			}
 		}

@@ -19,6 +19,5 @@ int executen(char **d, char **a)
 			exit(98);
 	}
 		wait(&status);
-   		printf("Child Complete\n");
 	return 0;
 }

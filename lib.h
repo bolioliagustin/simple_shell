@@ -1,3 +1,6 @@
+#ifndef LIB_H
+#define LIB_H
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -20,3 +23,5 @@ int executen(char **d, char **a);
 char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
+
+#endif

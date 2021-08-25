@@ -23,12 +23,12 @@ Example:
 
 `root@dea58c22b3fe:~/simple_shell# echo "/bin/ls" | ./hsh`<br/>
 `'#README.md#'       a.out        getEnvironCharN.c   main.c                  strD2PathCpy.c   strtokPath.c`<br/>
- 6forkExePrueba.c   concPath.c   hsh                 man_1_simple_shell.gz   strconcat.c<br/>
- README.md          funcs.c      lib.h               strD2Cpy.c              strtok.c<br/>
-root@dea58c22b3fe:~/simple_shell# echo "pwd" | ./hsh<br/>
-/root/simple_shell<br/>
-root@dea58c22b3fe:~/simple_shell#<br/>
-`
+`6forkExePrueba.c   concPath.c   hsh                 man_1_simple_shell.gz   strconcat.c`<br/>
+`README.md          funcs.c      lib.h               strD2Cpy.c              strtok.c`<br/>
+`root@dea58c22b3fe:~/simple_shell# echo "pwd" | ./hsh`<br/>
+`/root/simple_shell`<br/>
+`root@dea58c22b3fe:~/simple_shell#`<br/>
+
 
 **Interactive mode**
 

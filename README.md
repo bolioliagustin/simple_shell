@@ -10,8 +10,55 @@ Simple shell reads simple commands from standard input or from a file and execut
 
 To invoke simple_shell, you must compile all the *.c files in the repository and run the resulting executable:
 
-`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`<br/>
 `./hsh`
+
+Simple shell can be invoked in two modes: interactive and non-interactive.<br/>
+
+**Non-interactive mode**
+
+If invoked with standard input simple shell will read and execute commands in order.
+
+Example:
+
+`root@dea58c22b3fe:~/simple_shell# echo "/bin/ls" | ./hsh
+'#README.md#'       a.out        getEnvironCharN.c   main.c                  strD2PathCpy.c   strtokPath.c
+ 6forkExePrueba.c   concPath.c   hsh                 man_1_simple_shell.gz   strconcat.c
+ README.md          funcs.c      lib.h               strD2Cpy.c              strtok.c
+root@dea58c22b3fe:~/simple_shell# echo "pwd" | ./hsh
+/root/simple_shell
+root@dea58c22b3fe:~/simple_shell#
+`
+
+**Interactive mode**
+
+Simple shell can also be invoked with standard input which will be determined isatty(). In this mode simple_shell will display a prompt, $, when ready to read the user's input.
+
+Example:
+
+`
+root@dea58c22b3fe:~/simple_shell# ./hsh
+$ ls
+6forkExePrueba.c  concPath.c         hsh     man_1_simple_shell.gz  strconcat.c
+README.md         funcs.c            lib.h   strD2Cpy.c             strtok.c
+a.out             getEnvironCharN.c  main.c  strD2PathCpy.c         strtokPath.c
+$ pwd
+/root/simple_shell
+$ sooooo
+IT DOES NOT WORK!
+$ ^C
+root@dea58c22b3fe:~/simple_shell#
+`
+
+Also, commands can entered at the same time invocation occurs. In this case simple_shell will treat the first argument as a file and read commands from it, one per line. Simple_shell will execute each commands in order.
+
+Example:
+
+`$ cat 
+echo 'hello'
+$ ./shellby test
+'hello'
+$`
 
 The function is variadic, therefore, it takes any number of arguments after the format pointer.
 

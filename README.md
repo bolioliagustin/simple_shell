@@ -15,7 +15,7 @@ To invoke simple_shell, you must compile all the *.c files in the repository and
 
 Simple shell can be invoked in two modes: interactive and non-interactive.<br/>
 
-**Interactive mode**
+**Non-interactive mode**
 
 If invoked with standard input simple shell will read and execute commands in order.
 
@@ -30,7 +30,7 @@ Example:
 `root@dea58c22b3fe:~/simple_shell#`<br/>
 
 
-**Non-interactive mode**
+**Interactive mode**
 
 Simple shell can also be invoked with standard input which will be determined isatty(). In this mode simple_shell will display a prompt, $, when ready to read the user's input.
 

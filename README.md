@@ -6,7 +6,7 @@ A simple command-line interpreter developed as an end of trimester project at Ho
 
 Simple shell reads simple commands from standard input or from a file and executes them.
 
-<h3>Compilation :fireworks::<h3/>
+<h3>Compilation :fireworks::</h3>
 
 To invoke simple_shell, you must compile all the *.c files in the repository and run the resulting executable:
 

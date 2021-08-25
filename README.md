@@ -6,7 +6,7 @@ A simple command-line interpreter developed as an end of trimester project at Ho
 
 Simple shell reads simple commands from standard input or from a file and executes them.
 
-**Compilation** :fireworks::
+<h3>Compilation :fireworks::<h3/>
 
 To invoke simple_shell, you must compile all the *.c files in the repository and run the resulting executable:
 
@@ -15,7 +15,7 @@ To invoke simple_shell, you must compile all the *.c files in the repository and
 
 Simple shell can be invoked in two modes: interactive and non-interactive.<br/>
 
-**Non-interactive mode**
+**Interactive mode**
 
 If invoked with standard input simple shell will read and execute commands in order.
 
@@ -30,7 +30,7 @@ Example:
 `root@dea58c22b3fe:~/simple_shell#`<br/>
 
 
-**Interactive mode**
+**Non-interactive mode**
 
 Simple shell can also be invoked with standard input which will be determined isatty(). In this mode simple_shell will display a prompt, $, when ready to read the user's input.
 

@@ -21,13 +21,13 @@ If invoked with standard input simple shell will read and execute commands in or
 
 Example:
 
-`root@dea58c22b3fe:~/simple_shell# echo "/bin/ls" | ./hsh
-'#README.md#'       a.out        getEnvironCharN.c   main.c                  strD2PathCpy.c   strtokPath.c
- 6forkExePrueba.c   concPath.c   hsh                 man_1_simple_shell.gz   strconcat.c
- README.md          funcs.c      lib.h               strD2Cpy.c              strtok.c
-root@dea58c22b3fe:~/simple_shell# echo "pwd" | ./hsh
-/root/simple_shell
-root@dea58c22b3fe:~/simple_shell#
+`root@dea58c22b3fe:~/simple_shell# echo "/bin/ls" | ./hsh<br/>
+'#README.md#'       a.out        getEnvironCharN.c   main.c                  strD2PathCpy.c   strtokPath.c<br/>
+ 6forkExePrueba.c   concPath.c   hsh                 man_1_simple_shell.gz   strconcat.c<br/>
+ README.md          funcs.c      lib.h               strD2Cpy.c              strtok.c<br/>
+root@dea58c22b3fe:~/simple_shell# echo "pwd" | ./hsh<br/>
+/root/simple_shell<br/>
+root@dea58c22b3fe:~/simple_shell#<br/>
 `
 
 **Interactive mode**
@@ -37,17 +37,15 @@ Simple shell can also be invoked with standard input which will be determined is
 Example:
 
 `
-root@dea58c22b3fe:~/simple_shell# ./hsh
-$ ls
-6forkExePrueba.c  concPath.c         hsh     man_1_simple_shell.gz  strconcat.c
-README.md         funcs.c            lib.h   strD2Cpy.c             strtok.c
-a.out             getEnvironCharN.c  main.c  strD2PathCpy.c         strtokPath.c
-$ pwd
-/root/simple_shell
-$ sooooo
-IT DOES NOT WORK!
-$ ^C
-root@dea58c22b3fe:~/simple_shell#
+root@dea58c22b3fe:~/simple_shell# ./hsh<br/>
+$ ls<br/>
+6forkExePrueba.c  concPath.c         hsh     man_1_simple_shell.gz  strconcat.c<br/>
+README.md         funcs.c            lib.h   strD2Cpy.c             strtok.c<br/>
+a.out             getEnvironCharN.c  main.c  strD2PathCpy.c         strtokPath.c<br/>
+$ pwd<br/>
+/root/simple_shell<br/>
+$ sooooo<br/>
+IT DOES NOT WORK!<br/>
 `
 
 Also, commands can entered at the same time invocation occurs. In this case simple_shell will treat the first argument as a file and read commands from it, one per line. Simple_shell will execute each commands in order.

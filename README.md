@@ -48,22 +48,20 @@ Example:
 
 <h2>Features</h2>
 
-Specifier characters at the end define the type and the interpretation of its corresponding argument:
-
 |   | Example |
 |------------|-----------------|
-| Handle simple commands        | /bin/ls, /usr/bin/pwd    |
-| Handle PATH        | ls, pwd    |
-| Handle single commands with arguments | ls -l /root, /usrbin -l    |
+| Handle simple commands        | `/bin/ls`, `/usr/bin/pwd`    |
+| Handle `PATH`        | `ls`, `pwd`    |
+| Handle single commands with arguments | `ls -l /root`, `/usrbin -l`    |
 | Handle errors        |    |
-| Handles exit buit-in to exit the shell | exit |
-| Handles env buit-in to print current environment |env  |
+| Handles `exit` buit-in to exit the shell | `exit` |
+| Handles `env` buit-in to print current environment |`env`  |
 
 
 <h1>Notes :books:</h1>
-Simple shell does not handle comments, Ctrl + D condition, Ctrl + C signal, nor the help buit-in command. 
+Simple shell does not handle comments, `Ctrl + D` condition, `Ctrl + C` signal, nor the `help` buit-in command. 
 <br>
 <br>
 <h1>Authors :writing_hand:</h1>
 
-:princess: [Alina de los Santos](https://github.com/alina-delossantos) :princess:, :suspect: [Marcelo Arbiza](https://github.com/Aortiz91) :suspect: and :hurtrealbad: [Agustin Bolioli] (https://github.com/bolioliagustin)
+:princess: [Alina de los Santos](https://github.com/alina-delossantos) :princess:, :suspect: [Marcelo Arbiza](https://github.com/Aortiz91) :suspect: and :hurtrealbad: [Agustin Bolioli](https://github.com/bolioliagustin)
